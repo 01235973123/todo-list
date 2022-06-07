@@ -1,0 +1,195 @@
+.todo-list {
+  display: flex;
+  .new-task {
+    padding: 20px 30px;
+    width: 40%;
+    border-right: 1px solid #000000;
+    h3 {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+    .row {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+  }
+  .list {
+    width: 60%;
+    border-left: 1px solid #000000;
+    .todo-list-detail{
+      padding: 20px 10px;
+    }
+    h3 {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+    .items {
+      overflow: auto;
+      height: 300px;
+      margin-top: 20px;
+      border-top: 1px solid #000000;
+      border-bottom: 1px solid #000000;
+      border-radius: 5px;
+      .item {
+        background: #ffffff;
+        border: 1px solid #000000;
+        border-top: unset;
+        border-bottom: unset;
+        border-radius: 0px;
+        .parent {
+          display: flex;
+          justify-content: space-between;
+          padding: 16px 15px;
+          .right {
+            display: flex;
+            input {
+              margin-top: 8px;
+              margin-right: 12px;
+            }
+            p {
+              font-size: 16px;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              white-space: nowrap;
+              max-width: 530px;
+              margin-top: 4px;
+            }
+          }
+          .left {
+            display: flex;
+            button:first-child {
+              height: 27px;
+              color: #ffffff;
+              font-family: Arimo;
+              font-size: 12px;
+              font-weight: normal;
+              font-style: normal;
+              text-decoration: none;
+              text-align: center;
+              background: #00bcd4;
+              border: none;
+              border-radius: 8px;
+              width: 93px;
+              &:hover {
+                background-color: #042e33 !important;
+              }
+            }
+            button:last-child {
+              width: 79px;
+              height: 28px;
+              color: #ffffff;
+              font-family: Arimo;
+              font-size: 12px;
+              font-weight: normal;
+              font-style: normal;
+              text-decoration: none;
+              text-align: center;
+              background: #d9534f;
+              border: none;
+              border-radius: 8px;
+              margin-left: 10px;
+              &:hover {
+                background-color: #963430 !important;
+              }
+            }
+          }
+        }
+        .child {
+          height: 388px;
+          background: #ffffff;
+          border-top: 1px solid #000000;
+          border-radius: 0px;
+          .row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+          }
+        }
+      }
+    }
+    .items::-webkit-scrollbar {
+      width: 3px;
+    }
+
+    .items.thin::-webkit-scrollbar {
+      width: 2px;
+    }
+
+    .items::-webkit-scrollbar-track {
+      border-radius: 3px;
+      background: #cec0c0;
+    }
+
+    .items::-webkit-scrollbar-thumb {
+      border-radius: 3px;
+      background: #574e4e;
+    }
+
+    .bulk-action {
+      margin-top: 20px;
+      height: 82px;
+      background: #e0e0e0;
+      border-top: 1px solid #000000;
+      border-radius: 0px;
+      .item {
+        display: flex;
+        justify-content: space-between;
+        padding: 26px 15px;
+        .right {
+          display: flex;
+          input {
+            margin-top: 8px;
+            margin-right: 12px;
+          }
+          p {
+            font-size: 16px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            max-width: 530px;
+            margin-top: 4px;
+          }
+        }
+        .left {
+          display: flex;
+          button:first-child {
+            height: 27px;
+            color: #ffffff;
+            font-family: Arimo;
+            font-size: 12px;
+            font-weight: normal;
+            font-style: normal;
+            text-decoration: none;
+            text-align: center;
+            background: #00bcd4;
+            border: none;
+            border-radius: 8px;
+            width: 93px;
+            &:hover {
+              background-color: #042e33 !important;
+            }
+          }
+          button:last-child {
+            width: 79px;
+            height: 28px;
+            color: #ffffff;
+            font-family: Arimo;
+            font-size: 12px;
+            font-weight: normal;
+            font-style: normal;
+            text-decoration: none;
+            text-align: center;
+            background: #d9534f;
+            border: none;
+            border-radius: 8px;
+            margin-left: 10px;
+            &:hover {
+              background-color: #963430 !important;
+            }
+          }
+        }
+      }
+    }
+  }
+}
