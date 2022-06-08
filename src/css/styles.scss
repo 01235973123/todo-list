@@ -14,3 +14,19 @@
 button {
   cursor: pointer;
 }
+
+.text-error {
+  color: red;
+}
+
+.error {
+  input {
+    border-color: red !important;
+  }
+  label {
+    color: red !important;
+  }
+  textarea {
+    border-color: red !important;
+  }
+}

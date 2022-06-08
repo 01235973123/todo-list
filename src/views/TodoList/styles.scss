@@ -1,8 +1,15 @@
 .todo-list {
   display: flex;
+  min-height: 560px;
+  @media screen and (max-width:1000px) {
+    display: block;
+  }
   .new-task {
     padding: 20px 30px;
     width: 40%;
+    @media screen and (max-width:1000px) {
+      width: 100%;
+    }
     border-right: 1px solid #000000;
     h3 {
       text-align: center;
@@ -16,8 +23,11 @@
   }
   .list {
     width: 60%;
+    @media screen and (max-width:1000px) {
+      width: 100%;
+    }
     border-left: 1px solid #000000;
-    .todo-list-detail{
+    .todo-list-detail {
       padding: 20px 10px;
     }
     h3 {
@@ -28,15 +38,18 @@
       overflow: auto;
       height: 300px;
       margin-top: 20px;
-      border-top: 1px solid #000000;
-      border-bottom: 1px solid #000000;
-      border-radius: 5px;
+      border: 1px solid #000000;
+      .no-data {
+        color: red;
+        text-align: center;
+        margin-top: 50px;
+      }
       .item {
         background: #ffffff;
-        border: 1px solid #000000;
-        border-top: unset;
-        border-bottom: unset;
         border-radius: 0px;
+        .parent:not(:first-child) {
+          border-top: 1px solid black;
+        }
         .parent {
           display: flex;
           justify-content: space-between;
@@ -46,6 +59,7 @@
             input {
               margin-top: 8px;
               margin-right: 12px;
+              cursor: pointer;
             }
             p {
               font-size: 16px;
@@ -96,9 +110,11 @@
           }
         }
         .child {
-          height: 388px;
+          transition: 0.5s;
+          overflow: hidden;
+          padding: 0;
+          height: 0;
           background: #ffffff;
-          border-top: 1px solid #000000;
           border-radius: 0px;
           .row {
             display: flex;
@@ -106,6 +122,20 @@
             margin-bottom: 20px;
           }
         }
+        .child:last-child {
+          border-bottom: none;
+        }
+        .child.show {
+          border-top: 1px solid #000000;
+          height: 388px;
+          padding: 20px;
+        }
+      }
+      .item:not(:last-child) {
+        border-bottom: 1px solid black;
+      }
+      .item:not(:first-child) {
+        border-bottom: 1px solid black;
       }
     }
     .items::-webkit-scrollbar {
@@ -127,11 +157,12 @@
     }
 
     .bulk-action {
-      margin-top: 20px;
       height: 82px;
       background: #e0e0e0;
       border-top: 1px solid #000000;
       border-radius: 0px;
+      overflow: auto;
+      margin-right: 7px;
       .item {
         display: flex;
         justify-content: space-between;
@@ -190,6 +221,23 @@
           }
         }
       }
+    }
+    .bulk-action::-webkit-scrollbar {
+      width: 3px;
+    }
+
+    .bulk-action.thin::-webkit-scrollbar {
+      width: 2px;
+    }
+
+    .bulk-action::-webkit-scrollbar-track {
+      border-radius: 3px;
+      background: #cec0c0;
+    }
+
+    .bulk-action::-webkit-scrollbar-thumb {
+      border-radius: 3px;
+      background: #080505;
     }
   }
 }
